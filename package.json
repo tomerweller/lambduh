@@ -1,0 +1,20 @@
+{
+  "name": "lambduh",
+  "version": "1.0.0",
+  "scripts": {
+    "watch": "webpack -d --watch",
+    "build": "webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomerweller/lambduh.git"
+  },
+  "author": "tomer.weller@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "react": "15.3.1",
+    "react-dom": "15.3.1",
+    "webpack": "1.13.2",
+    "react-codemirror": "0.2.6"
+  }
+}

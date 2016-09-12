@@ -32,6 +32,8 @@
   (let [current-state @state]
     [:div
      [:h2 "Lambduh"]
+     ;TODO: use this codemirror component
+     ;[:> (aget js/deps "react-codemirror")]
      [:textarea#codearea
       {:value (:str current-state)
        :on-change #(update-state! (-> % .-target .-value))}]
