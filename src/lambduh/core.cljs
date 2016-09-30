@@ -27,13 +27,16 @@
         js/Error e
         (js/console.error "Eval failed:" e)))))
 
+(def code-mirror (r/adapt-react-class (aget js/deps "react-codemirror")))
 
 (defn root []
   (let [current-state @state]
     [:div
-     [:h2 "Lambduh"]
+     [:h2 "Lambduhduh"]
      ;TODO: use this codemirror component
-     ;[:> (aget js/deps "react-codemirror")]
+     [code-mirror {:value (:str current-state)
+                   :options {:mode "clojure" :lineNumbers true}
+                   :on-change #(update-state! %)}]
      [:textarea#codearea
       {:value (:str current-state)
        :on-change #(update-state! (-> % .-target .-value))}]

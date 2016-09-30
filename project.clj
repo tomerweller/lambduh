@@ -6,7 +6,7 @@
 
   :dependencies [[org.clojure/clojure "1.8.0" :scope "provided"]
                  [org.clojure/clojurescript "1.9.229"]
-                 [reagent "0.6.0-rc" :exclusions [cljsjs/react cljsjs/react-dom]]]
+                 [reagent "0.6.0" :exclusions [cljsjs/react cljsjs/react-dom]]]
 
   :plugins [[lein-cljsbuild "1.1.4"]
             [lein-figwheel "0.5.7"]]
