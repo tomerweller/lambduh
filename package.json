@@ -13,8 +13,9 @@
   "license": "MIT",
   "dependencies": {
     "react": "15.3.2",
+    "react-ace": "^3.6.0",
+    "react-codemirror": "0.2.6",
     "react-dom": "15.3.2",
-    "webpack": "1.13.2",
-    "react-codemirror": "0.2.6"
+    "webpack": "1.13.2"
   }
 }

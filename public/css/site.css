@@ -1,12 +1,13 @@
 body {
   font-family: 'Helvetica Neue', Verdana, Helvetica, Arial, sans-serif;
-  max-width: 600px;
+  max-width: 1000px;
   margin: 0 auto;
   padding-top: 72px;
   -webkit-font-smoothing: antialiased;
   font-size: 1.125em;
   color: #333;
   line-height: 1.5em;
+  background-color: khaki;
 }
 
 h1, h2, h3 {
@@ -33,6 +34,22 @@ a:hover {
   text-decoration: underline;
 }
 
-#codearea {
+#editor {
   width: 100%;
+}
+#main-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#editor-container {
+  flex-grow: 1;
+  max-width: 50%;
+
+}
+
+#result-container {
+  flex-grow: 1;
+  background-color: antiquewhite;
 }

@@ -27,21 +27,23 @@
         js/Error e
         (js/console.error "Eval failed:" e)))))
 
-(def code-mirror (r/adapt-react-class (aget js/deps "react-codemirror")))
+(def ace-editor (r/adapt-react-class (aget js/deps "react-ace" "default")))
 
 (defn root []
   (let [current-state @state]
     [:div
      [:h2 "Lambduhduh"]
-     ;TODO: use this codemirror component
-     [code-mirror {:value (:str current-state)
-                   :options {:mode "clojure" :lineNumbers true}
-                   :on-change #(update-state! %)}]
-     [:textarea#codearea
-      {:value (:str current-state)
-       :on-change #(update-state! (-> % .-target .-value))}]
-     [:p (with-out-str (cljs.pprint/pprint (:expression current-state)))]
-     [:p (with-out-str (cljs.pprint/pprint (:result current-state)))]]))
+     [:div#main-container
+      [:div#editor-container
+       [ace-editor
+        {:value (:str current-state)
+         :name "editor"
+         :mode "clojure"
+         :theme "twilight"
+         :on-change #(update-state! %)}]]
+      [:div#result-container
+       [:p (with-out-str (cljs.pprint/pprint (:expression current-state)))]
+       [:p (with-out-str (cljs.pprint/pprint (:result current-state)))]]]]))
 
 ;; -------------------------
 ;; Initialize app
